@@ -23,8 +23,6 @@
 
     $monedero1->sacarDinero(60);
     echo "<p>Después de sacar 60 € → " . $monedero1->consultarDinero() . "</p>";
-
-    $monedero1->sacarDinero(100); 
     ?>
 
 </body>

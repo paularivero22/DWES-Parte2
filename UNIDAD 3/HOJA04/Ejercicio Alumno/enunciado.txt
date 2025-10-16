@@ -1,0 +1,3 @@
+Codificar estas dos clases y crear un objeto de tipo
+Alumno. Comprobar mediante el operador instanceof si el objeto es de
+tipo Persona o de tipo Alumno
