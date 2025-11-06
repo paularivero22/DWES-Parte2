@@ -22,15 +22,17 @@ abstract class ElementoVolador implements Volador
         return $this->$atributo;
     }
 
-    public function volando() {
-        if($this->altitud > 0) {
+    public function volando()
+    {
+        if ($this->altitud > 0) {
             return true;
         } else {
             return false;
         }
     }
 
-    public function acelerar(int $velocidad) {
+    public function acelerar(int $velocidad)
+    {
         $this->velocidad += $velocidad;
     }
 
