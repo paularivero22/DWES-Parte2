@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Formulario</h1>
+
+    <form action="procesa.php" method="post">
+        <label for="nombre">Nombre: </label>
+        <input type="text" id="nombre" name="nombre"/>
+        <br/><br/>
+
+        <label for="modulo">Modulo: </label>
+        <select id = "modulo" name="modulo">
+            <option value="dwes">Desarrollo web en entorno servidor</option>
+            <option value="dwec">Desarrollo web en entorno cliente</option>
+        </select>
+
+        <input type="submit" value="enviar"></input>
+    </form>
+</body>
+</html>
