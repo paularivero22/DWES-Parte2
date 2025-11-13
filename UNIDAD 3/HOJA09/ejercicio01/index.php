@@ -40,9 +40,8 @@
     ];
 
     $resultados = [];
-    $errores = [];
 
-    if (isset($_POST['cantidad']) && isset($_POST['origen']) && isset($_POST['destino'])) {
+    if (isset($_POST['cantidad']) && isset($_POST['origen']) && isset($_POST['destino']) && $_SERVER['REQUEST_METHOD'] === 'POST') {
         $cantidad = $_POST['cantidad'];
         $origen = $_POST['origen'];
         $destino = $_POST['destino'];
