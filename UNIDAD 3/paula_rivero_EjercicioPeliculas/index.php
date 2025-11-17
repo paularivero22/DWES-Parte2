@@ -97,11 +97,15 @@
     </form>
 
     <?php
+    
     if (isset($_POST['buscador'])) {
         $busqueda = strtolower($_POST['buscador']);
+        $encontrada = false;
 
         foreach ($peliculas as $pelicula => $descripcion) {
             if (str_contains(strtolower($pelicula), $busqueda)) {
+                $encontrada = true;
+            
                 echo "
                 <br/> <br/>
                     <table border='1'>
@@ -120,7 +124,38 @@
                     ";
             }
         }
+
+        if (!$encontrada) {
+            echo "<p>No se ha encontrado ninguna película</p>";
+        }
     }
+    
+
+    /*
+    //Version sin imagenes:
+    if (isset($_POST['buscador'])) {
+        $busqueda = strtolower($_POST['buscador']);
+        $encontrada = false;
+
+        foreach ($peliculas as $pelicula => $descripcion) {
+            if (str_contains(strtolower($pelicula), $busqueda)) {
+                $encontrada = true;
+                echo "
+                <br/> <br/>
+                    <ul>
+                        <li>
+                            <h3>$pelicula ({$descripcion['año']})</h3>
+                            <p>{$descripcion['sinopsis']}</p>
+                        </li>
+                    </ul>
+                    ";
+            }
+        }
+        if (!$encontrada) {
+            echo "<p>No se ha encontrado ninguna película</p>";
+        }
+    }
+    */
     ?>
 </body>
 
