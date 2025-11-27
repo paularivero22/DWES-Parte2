@@ -11,11 +11,11 @@
     <h1>Formulario de Contacto</h1><br />
 
     <form action="procesa.php" method="post">
-        <label for="nombre">Nombre: </label>
-        <input type="text" id="nombre" name="nombre" require /><br /><br />
-
         <label for="email">Correo electrónico: </label>
         <input type="text" id="email" name="email" require /><br /><br />
+
+        <label for="asunto">Asunto: </label>
+        <input type="text" id="asunto" name="asunto" require /><br /><br />
 
         <label for="mensaje">Mensaje: </label>
         <textarea type="text" id="mensaje" name="mensaje" require></textarea><br /><br />
@@ -24,8 +24,12 @@
     </form>
 
     <?php
+    if(isset($_GET['success'])) {
+        echo "<p style='color:#0ba12e'>Correo enviado</p>";
+        exit;
+    }
+
     if (isset($_GET['error'])) {
-        
         switch($_GET['error']) {
             case 1:
                 echo "<p style='color:#b00'>Por favor, rellena todos los campos.</p>";
@@ -39,9 +43,7 @@
             default: 
                 echo "<p style='color:#b00'>Error.</p>";
         }
-    } else if(isset($_GET['success'])) {
-        echo "<p style='color:#0ba12e'>Por favor, rellena todos los campos.</p>";
-    }
+    } 
     ?>
 </body>
 

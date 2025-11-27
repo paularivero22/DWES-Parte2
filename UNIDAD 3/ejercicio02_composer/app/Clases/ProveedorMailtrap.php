@@ -1,11 +1,12 @@
 <?php
-
 namespace app\Clases;
 
 use app\Interfaces\InterfazProveedorCorreo;
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
+
+require '../vendor/autoload.php';
 
 class ProveedorMailtrap implements InterfazProveedorCorreo
 {
@@ -14,28 +15,26 @@ class ProveedorMailtrap implements InterfazProveedorCorreo
         $mail = new PHPMailer(true);
 
         try {
-            // Configuración del servidor SMTP (Mailtrap)
             $mail->isSMTP();
-            $mail->Host       = 'sandbox.smtp.mailtrap.io'; // Host SMTP de Mailtrap
-            $mail->SMTPAuth   = true;
-            $mail->Username   = '6d5fe0c5e3bc17';       // Usuario SMTP Mailtrap
-            $mail->Password   = '842639c7630a82';       // Contraseña SMTP Mailtrap
-            $mail->Port       = 2525;                      // Puerto recomendado por Mailtrap
-            $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+            $mail->Host = 'sandbox.smtp.mailtrap.io';
+            $mail->SMTPAuth = true;
+            $mail->Username = '6d5fe0c5e3bc17';
+            $mail->Password = '842639c7630a82';
 
-            // Remitente y destinatario
-            $mail->setFrom('no-reply@tusitio.com', 'Tu Aplicación');
+            $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+            $mail->Port = 25;
+
+            $mail->setFrom('priveroh01@educantabira.es', 'Formulario Web');
             $mail->addAddress($paraQuien);
 
-            // Contenido del correo
             $mail->isHTML(true);
             $mail->Subject = $asunto;
-            $mail->Body    = $cuerpoMensaje;
+            $mail->Body = $cuerpoMensaje;
 
-            // Enviar
             return $mail->send();
+
         } catch (Exception $e) {
-            error_log("Error enviando correo: {$mail->ErrorInfo}");
+            echo "Error al enviar el mensaje: {$mail->ErrorInfo}";
             return false;
         }
     }

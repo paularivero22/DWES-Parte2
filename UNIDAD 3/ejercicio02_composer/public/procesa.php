@@ -5,17 +5,16 @@ require_once '../vendor/autoload.php';
 use app\Clases\ProveedorMailtrap;
 use app\Clases\ServicioCorreo;
 
-$nombre = $_POST['nombre'] ?? '';
 $email = $_POST['email'] ?? '';
+$asunto = $_POST['asunto'] ?? '';
 $mensaje = $_POST['mensaje'] ?? '';
 
-if ($nombre != '' || $email != '' || $mensaje != '') {
-
+if ($asunto != '' && $email != '' && $mensaje != '') {
     if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
         $proveedorMailtrap = new ProveedorMailtrap();
         $servicioCorreo = new ServicioCorreo($proveedorMailtrap);
         
-        if ($servicioCorreo->enviarCorreo($nombre, $email, $mensaje)) {
+        if ($servicioCorreo->enviarCorreo($email, $asunto, $mensaje)) {
             header('Location: index.php?success=1');
         } else {
             header('Location: index.php?error=3');
@@ -23,6 +22,7 @@ if ($nombre != '' || $email != '' || $mensaje != '') {
         
     } else {
         header('Location: index.php?error=2');
+        exit;
     }
 } else {
     header('Location: index.php?error=1');

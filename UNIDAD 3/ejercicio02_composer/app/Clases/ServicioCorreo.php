@@ -16,10 +16,6 @@ class ServicioCorreo
 
     public function enviarCorreo(string $paraQuien, string $asunto, string $cuerpoMensaje): bool
     {
-        return $this->proveedor->enviarCorreo(
-            $paraQuien,
-            $asunto,
-            $cuerpoMensaje
-        );
+        return $this->proveedor->enviarCorreo($paraQuien, $asunto, $cuerpoMensaje);
     }
 }
