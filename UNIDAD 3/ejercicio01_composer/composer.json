@@ -1,0 +1,19 @@
+{
+    "name": "usuario/ejercicio01_composer",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+             "App\\": "App/"
+        }
+    },
+    "authors": [
+        {
+            "name": "paula",
+            "email": "priveroh01@educantabria.es"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "hackzilla/password-generator": "^1.7"
+    }
+}

@@ -1,0 +1,19 @@
+{
+    "name": "usuario/ejercicio02_composer",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "app\\": "app/"
+        }
+    },
+    "authors": [
+        {
+            "name": "paula",
+            "email": "priveroh01@educantabria.es"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "phpmailer/phpmailer": "^7.0"
+    }
+}
