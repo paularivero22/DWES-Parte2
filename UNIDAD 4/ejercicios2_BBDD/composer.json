@@ -1,0 +1,19 @@
+{
+    "name": "usuario/ejercicios2_bbdd",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+             "app\\": "app/"
+        }
+    },
+    "authors": [
+        {
+            "name": "paula",
+            "email": "priveroh01@educantabria.es"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "vlucas/phpdotenv": "^5.6"
+    }
+}

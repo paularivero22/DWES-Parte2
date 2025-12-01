@@ -61,7 +61,4 @@ class funcionesBD
             return false;
         }
     }
-
-
-    public function eliminarEquipo() {}
 }
