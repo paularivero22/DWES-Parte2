@@ -1,0 +1,17 @@
+{
+    "name": "usuario/unidad5",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "Usuario\\Unidad5\\": "App/"
+        }
+    },
+    "authors": [
+        {
+            "name": "paula",
+            "email": "priveroh01@educantabria.es"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {}
+}
